@@ -5,9 +5,14 @@ This is a discussion site based on a flat discussion thread divided into posts. 
 
 This project uses Slim framework, jQuery, Datatables.js and Chart.js.
 
+It includes the ability to add users, make posts, comment, moderate posts, and has an adminitration and statistics panel.
 
+![](http://imgur.com/Tx80dev.png)
 
-![](http://imgur.com/Tx80dev.png)
-![](http://imgur.com/Tx80dev.png)
-![](http://imgur.com/Tx80dev.png)
+![](http://imgur.com/fFVgDF1.png)
+
+![](http://imgur.com/UgNC72q.png)
+
+![](http://imgur.com/wvU4Kxo.png)
+
 ![](http://imgur.com/G233qRs.png)
