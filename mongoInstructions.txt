@@ -1,0 +1,93 @@
+############################################
+#                                          #
+# Setting up a portable XAMPP with MongoDB #
+# Richard Flanagan                         #
+#                                          #
+############################################
+
+Note: Do NOT download versions other than those specified here, as they might not be the portable version
+
+
+
+XAMPP
+=====
+Download XAMPP portable:
+    http://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.8.3/xampp-portable-win32-1.8.3-5-VC11.zip/download
+Extract the files. 
+Run setup_xampp.bat.
+
+
+
+MONGODB
+=======
+Download "portable" MongoDB:
+	https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-2.6.11.zip
+Extract and copy the folder into your XAMPP folder:
+
+C:/YOUR_PATH_TO_XAMPP/
+    xampp
+    |- mongodb_2.6.11
+    |  |- (files)
+    |  |- bin
+    |     |- mongod.exe <- server
+    |     |- mongo.exe  <- client
+    |     |- (files)
+    |- apache
+    |- php
+    |- etc...
+
+
+
+Ensure you have a mongodb server installed on your local machine.
+Make a folder called mongodb in your project folder like so (be sure to include the data/db folders):
+
+C:/YOUR_PATH_TO_XAMPP/
+    xampp
+    |- htdocs
+    |  |- myprojectfolder
+    |     |- mongodb    <- make this
+    |         |- data   <- make this
+    |             |- db <- make this
+    |- mongodb_2.6.11
+    |- apache
+    |- php
+    |- etc...
+	 
+Navigate to mongodb_2.6.11/bin and run the following command:
+    mongod.exe --dbpath="C:\YOUR_PATH_TO_XAMPP\xampp\htdocs\myprojectfolder\mongodb\data\db"
+The mongodb folder will hold your database data. mongod.exe is the mongo server instance. Run this command before each session to be able to access your data.
+It might be useful to write a small script to run this command for you.
+You can run mongo.exe to get a mongo client.
+
+NOTE: If you get a MSVCR***.dll is not installed error, then either:
+ - Install mongo to your machine using the .msi installer. (You can uninstall it afterwards if you want)
+ - Install a microsoft visual studios c++ redistributable for the desired version
+
+
+
+
+MONGODB-PHP DRIVER
+==================
+Download the driver:
+    http://windows.php.net/downloads/pecl/releases/mongo/1.6.11/php_mongo-1.6.11-5.5-ts-vc11-x86.zip
+Extract the files.
+Copy php_mongo.dll and paste it into C:/YOUR_PATH_TO_XAMPP/xampp/php/ext/.
+Open php.ini located at C:/YOUR_PATH_TO_XAMPP/xampp/php/.
+In the extensions section, add in the following line:
+    extension=php_mongo.dll
+Start/restart apache.
+If you get an error, copy C:/YOUR_PATH_TO_XAMPP/xampp/php/libsasl.dll into C:/YOUR_PATH_TO_XAMPP/xampp/apache/.
+Restart apache.
+
+
+
+TESTING THE CONNECTION
+======================
+You can check the loaded extensions by using:
+    echo phpinfo();
+Search for the mongo section.
+
+Check for specific extensions using:
+    var_dump(extension_loaded("mongo"));
+You should see a true or false.
+
