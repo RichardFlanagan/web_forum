@@ -10,6 +10,8 @@ It includes the ability to add users, make posts, comment, moderate posts, and h
 Screencast video below: <br>
 [![](https://img.youtube.com/vi/BGUv1GeKxec/0.jpg)](https://www.youtube.com/watch?v=BGUv1GeKxec)
 
+Full project zip: https://mega.nz/#!2csXBRqT!IoVgHnA0G0KkNdkTGHQzXcYCuAFo_H3CwF2acN4WrJ4
+
 ![](http://imgur.com/Tx80dev.png)
 
 ![](http://imgur.com/fFVgDF1.png)
