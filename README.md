@@ -7,6 +7,9 @@ This project uses Slim framework, jQuery, Datatables.js and Chart.js.
 
 It includes the ability to add users, make posts, comment, moderate posts, and has an adminitration and statistics panel.
 
+Screencast video below: <br>
+[![](https://img.youtube.com/vi/BGUv1GeKxec/0.jpg)](https://www.youtube.com/watch?v=BGUv1GeKxec)
+
 ![](http://imgur.com/Tx80dev.png)
 
 ![](http://imgur.com/fFVgDF1.png)
